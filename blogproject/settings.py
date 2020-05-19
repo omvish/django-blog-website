@@ -134,5 +134,5 @@ EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_USE_TLS=True
 EMAIL_PORT=587
-EMAIL_HOST_USER='edyst.tcs@gmail.com'
-EMAIL_HOST_PASSWORD="qw34ty78"
+EMAIL_HOST_USER='apitesting003@gmail.com'
+EMAIL_HOST_PASSWORD="api123testing"
