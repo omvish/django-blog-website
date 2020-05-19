@@ -1,0 +1,26 @@
+
+
+{% extends  'blogapp/base.html' %}
+
+  {% block parentblock %}
+{% if image %}
+  <div class="col-sm-8">
+        <h2>Name:{{image.name}}</h2>
+        <h5>Author:{{image.author}} at {{image.upload_date}}</h5>
+        <div class="fakeimg"><img src="{{image.image.url}}" height="100" width="150" ></div>
+        <p>{{image.description}}</p>
+  </div>
+
+
+
+   <!--   <h1 >PID: {{image.id}}</h1>
+   <h2>Name:{{image.name}}</h2>
+    <h2></h2>
+
+    <p>Description: {{image.description}}</p>
+ <td>{{img.author}}</td>
+      <td>{{img.upload_date | timesince}}</td> -->
+{%endif%}
+
+
+   {%endblock%}

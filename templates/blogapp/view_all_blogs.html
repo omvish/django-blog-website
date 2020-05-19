@@ -1,0 +1,30 @@
+{% extends  'blogapp/base.html' %}
+{% block parentblock%}
+{% if images %}
+<h2>Blogs Posted:</h2>
+<table border="1" class="table table-hover">
+<tr>
+<th>ID</th> <th>Name</th> <th>Image</th> <th>Description</th> <th>Author</th> <th>Time</th>
+</tr>
+  {% for img in images %}
+<tr>
+
+     <td >{{img.id}}</td>
+     <td>{{img.name}}</td>
+     <td><a href="/detailview?id={{img.id}}"><img src="{{img.image.url}}" height="100" width="150" name = "{{img.image}}"></a></td>
+     <td>{{img.description}}</td>
+     <td>{{img.author}}</td>
+     <td>{{img.upload_date|timesince}}</td>
+     {% ifequal request.user.username img.author %}
+     <td>
+       <a href="?id={{img.id}}" class="btn btn-danger" onclick="return confirm("Delete File.\nAre Yoou Sure?")"><ion-icon name="trash-outline"></ion-icon></button>
+     </td>
+     {% endifequal%}
+
+</tr>
+  {%endfor%}
+</table>
+{%else%}
+<h2>No Data Founds</h2>
+{%endif%}
+{% endblock %}
